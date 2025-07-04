@@ -63,6 +63,3 @@ Django/
 
 For production deployment, see [Django deployment checklist](https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/).
 
-## License
-
-MIT License
