@@ -31,9 +31,7 @@ A personal portfolio website built with Django.
 4. Set up environment variables:
    Create a `.env` file with:
    ```
-   SECRET_KEY=your-secret-key-here
-   DEBUG=True
-   ```
+
 
 5. Run migrations:
    ```bash
