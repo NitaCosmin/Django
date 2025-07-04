@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="profile-form-container">
+  <h2>Editare Profil</h2>
+  <form method="post" enctype="multipart/form-data" class="profile-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-save">Salvează</button>
+  </form>
+</div>
+{% endblock %}

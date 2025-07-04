@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Portofoliu – Nita Cosmin</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav style="background-color: #007bff; padding: 15px;">
+  <div style="max-width: 960px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
+    <a href="{% url 'home' %}" style="color: white; text-decoration: none; font-size: 20px; font-weight: bold;">👤 Portofoliu</a>
+    <div>
+      <a href="{% url 'home' %}" style="color: white; margin-right: 20px;">Acasă</a>
+      <a href="{% url 'edit_profile' %}" style="color: white; margin-right: 20px;">Profil</a>
+      <a href="{% url 'contact' %}" style="color: white; margin-right: 20px;">Contact</a>
+      
+    
+      {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        
+          {% csrf_token %}
+          <button type="submit" style="background:none; border:none; color:white; cursor:pointer; margin-left: 10px; font-size: 1em;">Logout</button>
+        </form>
+      {% else %}
+        <a href="{% url 'login' %}" style="color: white; margin-left: 10px;">Login</a>
+        <a href="{% url 'register' %}" style="color: white; margin-left: 10px;">Register</a>
+      {% endif %}
+      
+    </div>
+  </div>
+</nav>
+
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
